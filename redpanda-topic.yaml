@@ -1,0 +1,13 @@
+apiVersion: cluster.redpanda.com/v1alpha1
+kind: Topic
+metadata:
+  name: my-topic
+  namespace: kafka
+spec:
+  kafkaApiSpec:
+    brokers:
+      - "redpanda-0.redpanda.kafka.svc.cluster.local:9093"
+    tls:
+      caCertSecretRef:
+        name: "redpanda-default-cert"
+        key: "ca.crt"

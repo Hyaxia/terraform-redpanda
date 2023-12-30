@@ -1,0 +1,9 @@
+/data
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+kustomize.output
+kubectl_taint_controlplane.output
+.DS_Store

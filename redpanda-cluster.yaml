@@ -1,0 +1,20 @@
+# default values at - https://artifacthub.io/packages/helm/redpanda-data/redpanda?modal=values&path=affinity
+apiVersion: cluster.redpanda.com/v1alpha1
+kind: Redpanda
+metadata:
+  name: redpanda
+  namespace: kafka
+spec:
+  chartRef: {}
+  clusterSpec:
+    external:
+      type: NodePort
+      enabled: true
+      service:
+        enabled: true
+      domain: customredpandadomain.local
+    statefulset:
+      replicas: 1
+      initContainers:
+        setDataDirOwnership:
+          enabled: true
